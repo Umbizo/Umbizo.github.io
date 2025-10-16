@@ -1,10 +1,402 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Umbizo</title>
-  </head>
-  <body>
-    <h1>Umbizo Software Solutions</h1>
-    <p>Welcome to the Umbizo repository resource</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umbizo GitHub - Translating Data into Actionable Insights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --genomics: #9b59b6;
+            --bioinformatics: #1abc9c;
+            --ai: #e67e22;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .navbar {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary), #34495e);
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 2rem;
+            color: var(--primary);
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .expertise-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .expertise-card.genomics { border-top-color: var(--genomics); }
+        .expertise-card.bioinformatics { border-top-color: var(--bioinformatics); }
+        .expertise-card.ai { border-top-color: var(--ai); }
+        
+        .expertise-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .expertise-card.genomics .expertise-icon { color: var(--genomics); }
+        .expertise-card.bioinformatics .expertise-icon { color: var(--bioinformatics); }
+        .expertise-card.ai .expertise-icon { color: var(--ai); }
+        
+        .expertise-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .private-repos-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .private-repos-notice i {
+            font-size: 2rem;
+            color: #f39c12;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                display: flex;
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                margin-left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-dna"></i>
+            Umbizo GitHub
+        </div>
+        <div class="nav-links">
+            <a href="#expertise">Expertise</a>
+            <a href="#access">Repository Access</a>
+            <a href="https://umbizo.co.uk">Main Site</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Translating Data into Actionable Insights</h1>
+        <p class="tagline">Advanced analytics and computational solutions for the life sciences</p>
+        <div class="cta-buttons">
+            <a href="#access" class="btn btn-primary">
+                <i class="fas fa-lock"></i>
+                Request Repository Access
+            </a>
+            <a href="https://umbizo.co.uk" class="btn btn-outline">
+                <i class="fas fa-external-link-alt"></i>
+                Visit Our Main Site
+            </a>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title" id="expertise">Our Core Expertise</h2>
+        
+        <div class="expertise-grid">
+            <div class="expertise-card genomics">
+                <i class="fas fa-dna expertise-icon"></i>
+                <h3>Genomics</h3>
+                <p>Advanced genomic analysis, variant calling, and sequence interpretation for precision medicine applications.</p>
+            </div>
+            
+            <div class="expertise-card">
+                <i class="fas fa-stethoscope expertise-icon"></i>
+                <h3>Precision Medicine</h3>
+                <p>Tailoring medical treatment to individual characteristics, needs, and preferences.</p>
+            </div>
+            
+            <div class="expertise-card bioinformatics">
+                <i class="fas fa-laptop-code expertise-icon"></i>
+                <h3>Bioinformatics</h3>
+                <p>Developing tools and pipelines for biological data analysis and interpretation.</p>
+            </div>
+            
+            <div class="expertise-card">
+                <i class="fas fa-chart-line expertise-icon"></i>
+                <h3>Predictive Modelling</h3>
+                <p>Statistical models and machine learning algorithms for outcome prediction.</p>
+            </div>
+            
+            <div class="expertise-card ai">
+                <i class="fas fa-robot expertise-icon"></i>
+                <h3>Machine Learning & AI</h3>
+                <p>Intelligent algorithms for pattern recognition, classification, and automation.</p>
+            </div>
+            
+            <div class="expertise-card">
+                <i class="fas fa-bolt expertise-icon"></i>
+                <h3>AI and Automation</h3>
+                <p>Streamlining processes through intelligent automation and workflow optimization.</p>
+            </div>
+            
+            <div class="expertise-card">
+                <i class="fas fa-tachometer-alt expertise-icon"></i>
+                <h3>Performance Optimisation</h3>
+                <p>Enhancing computational efficiency and scalability of analytical pipelines.</p>
+            </div>
+            
+            <div class="expertise-card">
+                <i class="fas fa-server expertise-icon"></i>
+                <h3>High Performance Computing</h3>
+                <p>Leveraging parallel computing and cluster environments for large-scale data analysis.</p>
+            </div>
+            
+            <div class="expertise-card">
+                <i class="fas fa-chart-bar expertise-icon"></i>
+                <h3>Data Visualisation</h3>
+                <p>Creating intuitive and informative visual representations of complex datasets.</p>
+            </div>
+            
+            <div class="expertise-card">
+                <i class="fas fa-calculator expertise-icon"></i>
+                <h3>Statistical Consulting</h3>
+                <p>Expert guidance on experimental design, analysis methods, and result interpretation.</p>
+            </div>
+        </div>
+
+        <section id="access">
+            <h2 class="section-title">Repository Access</h2>
+            
+            <div class="private-repos-notice">
+                <i class="fas fa-lock"></i>
+                <h3>Protected Research & Development</h3>
+                <p>The majority of our repositories contain proprietary research, client work, and sensitive intellectual property, and are therefore kept private.</p>
+                <p>If you are a collaborator, client, or potential partner who needs access to specific repositories, please contact us to discuss access requirements.</p>
+                
+                <div class="cta-buttons">
+                    <a href="mailto:github@umbizo.co.uk?subject=GitHub Repository Access Request" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Request Access
+                    </a>
+                    <a href="https://github.com/umbizo" class="btn btn-outline">
+                        <i class="fab fa-github"></i>
+                        View Public Repositories
+                    </a>
+                </div>
+            </div>
+
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <i class="fas fa-shield-alt expertise-icon"></i>
+                    <h3>Confidentiality</h3>
+                    <p>Our private repositories protect client data, proprietary algorithms, and ongoing research projects.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <i class="fas fa-handshake expertise-icon"></i>
+                    <h3>Collaboration</h3>
+                    <p>We provide secure access to authorized collaborators and clients through our GitHub organization.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <i class="fas fa-graduation-cap expertise-icon"></i>
+                    <h3>Open Science</h3>
+                    <p>We maintain public repositories for open-source tools, publications, and educational materials.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dna"></i>
+                Umbizo
+            </div>
+            <p>Translating complex data into meaningful insights for healthcare and life sciences.</p>
+            <div class="footer-links">
+                <a href="https://github.com/umbizo"><i class="fab fa-github"></i> GitHub Organization</a>
+                <a href="https://umbizo.co.uk"><i class="fas fa-globe"></i> Main Website</a>
+                <a href="mailto:contact@umbizo.co.uk"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            <p>&copy; 2024 Umbizo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>

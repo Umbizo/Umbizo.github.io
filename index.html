@@ -13,6 +13,10 @@
             --genomics: #9b59b6;
             --bioinformatics: #1abc9c;
             --ai: #e67e22;
+            --client-access: #27ae60;
+            --data-engineering: #e74c3c;
+            --cloud: #3498db;
+            --visualization: #9b59b6;
         }
         
         * {
@@ -38,17 +42,40 @@
         }
         
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
         
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin-left: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
         }
         
         .hero {
@@ -56,11 +83,37 @@
             color: white;
             padding: 4rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
         
         .container {
@@ -89,13 +142,105 @@
             padding: 2rem;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .genomics-card {
+            border-top: 4px solid var(--genomics);
+        }
+        
+        .precision-medicine-card {
+            border-top: 4px solid var(--accent);
+        }
+        
+        .bioinformatics-card {
+            border-top: 4px solid var(--bioinformatics);
+        }
+        
+        .ai-card {
+            border-top: 4px solid var(--ai);
+        }
+        
+        .data-engineering-card {
+            border-top: 4px solid var(--data-engineering);
+        }
+        
+        .cloud-card {
+            border-top: 4px solid var(--cloud);
+        }
+        
+        .visualization-card {
+            border-top: 4px solid var(--visualization);
+        }
+        
+        .statistics-card {
             border-top: 4px solid var(--secondary);
         }
         
         .expertise-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+        }
+        
+        .genomics-icon {
+            color: var(--genomics);
+        }
+        
+        .precision-medicine-icon {
+            color: var(--accent);
+        }
+        
+        .bioinformatics-icon {
+            color: var(--bioinformatics);
+        }
+        
+        .ai-icon {
+            color: var(--ai);
+        }
+        
+        .data-engineering-icon {
+            color: var(--data-engineering);
+        }
+        
+        .cloud-icon {
+            color: var(--cloud);
+        }
+        
+        .visualization-icon {
+            color: var(--visualization);
+        }
+        
+        .statistics-icon {
             color: var(--secondary);
+        }
+        
+        .image-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .showcase-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .showcase-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .showcase-image:hover img {
+            transform: scale(1.05);
         }
         
         .access-notice {
@@ -107,6 +252,76 @@
             margin: 2rem 0;
         }
         
+        .client-access {
+            background: #e8f5e8;
+            border: 1px solid #27ae60;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .members-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .members-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .member-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-avatar:hover {
+            transform: scale(1.1);
+        }
+        
+        .member-link {
+            text-decoration: none;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .error {
+            text-align: center;
+            color: #e74c3c;
+            background: #fdf2f2;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
         .btn {
             padding: 0.8rem 1.5rem;
             border-radius: 5px;
@@ -115,12 +330,24 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            margin: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         
         .btn-primary {
             background: var(--secondary);
             color: white;
+        }
+        
+        .btn-client {
+            background: var(--client-access);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .footer {
@@ -130,57 +357,153 @@
             padding: 2rem;
             margin-top: 3rem;
         }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+            
+            .logo-text {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .members-container {
+                gap: 0.8rem;
+            }
+            
+            .member-avatar {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">
-            <i class="fas fa-dna"></i>
-            Umbizo GitHub
-        </div>
+        <a href="#" class="logo">
+            <img src="https://lh3.googleusercontent.com/sitesv/AICyYdY6V4KNq9snj5OWGR6VeHxoYW50I0BatSqC3tIDBdVOWzUUghmaBpWzESrtyBbcyWvtZKgrES19JA94s1ana5c8tcuajdxzxWRbrlesWOHFTjAb0pTTTSg9KwQlMJq3A_aUHYoIKqfcW5mdH8yEblstNddt_8Bi8nUIVcRpAku61Ih99aX9pwWn-Os=w16383" alt="Umbizo Logo" class="logo-img">
+            <span class="logo-text">Umbizo GitHub</span>
+        </a>
         <div class="nav-links">
-            <a href="https://umbizo.co.uk">Main Site</a>
+            <a href="https://umbizo.co.uk">
+                <i class="fab fa-github"></i>
+                Main Site
+            </a>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>Translating Data into Actionable Insights</h1>
-        <p>Advanced analytics and computational solutions for the life sciences</p>
-        <div style="margin-top: 2rem;">
-            <a href="mailto:contact@umbizo.co.uk" class="btn btn-primary">
-                <i class="fas fa-lock"></i>
-                Request Repository Access
-            </a>
+        <div class="hero-background" style="background-image: url('https://lh3.googleusercontent.com/sitesv/AICyYdbe6qYVRdzrlSZNS0NXCK9uP0u1gA8m9kSwf0WI3mJbLCUuV5EyGtl_m9ZJ999YcFMuBWl_RJRddDMRX1oxAP77IGuM_H3HR8wQxAhkPYpN68u0MIPUiAzvP7LHI2AZbP0U9y7i019jj-di_13FxWbpd4zMkNhFRlylIhEoaIvMPKlvkR8x543VLHdF4SAbndQTLkEAQ8RY6gCtTT61nnvcSUKJNCKjuYzw=w1280')"></div>
+        <div class="hero-content">
+            <h1>Translating Data into Actionable Insights</h1>
+            <p>Advanced analytics and computational solutions for the life sciences</p>
+            <div class="hero-buttons">
+                <a href="mailto:contact@umbizo.co.uk" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Request Repository Access
+                </a>
+                <a href="https://github.com/umbizo" class="btn btn-client">
+                    <i class="fab fa-github"></i>
+                    Client Access
+                </a>
+            </div>
         </div>
     </section>
 
     <div class="container">
+        <!-- Image Showcase -->
+        <div class="image-showcase">
+            <div class="showcase-image">
+                <img src="https://lh3.googleusercontent.com/sitesv/AICyYdbe6qYVRdzrlSZNS0NXCK9uP0u1gA8m9kSwf0WI3mJbLCUuV5EyGtl_m9ZJ999YcFMuBWl_RJRddDMRX1oxAP77IGuM_H3HR8wQxAhkPYpN68u0MIPUiAzvP7LHI2AZbP0U9y7i019jj-di_13FxWbpd4zMkNhFRlylIhEoaIvMPKlvkR8x543VLHdF4SAbndQTLkEAQ8RY6gCtTT61nnvcSUKJNCKjuYzw=w1280" alt="Umbizo Data Analysis">
+            </div>
+            <div class="showcase-image">
+                <img src="https://lh3.googleusercontent.com/sitesv/AICyYdbe6qYVRdzrlSZNS0NXCK9uP0u1gA8m9kSwf0WI3mJbLCUuV5EyGtl_m9ZJ999YcFMuBWl_RJRddDMRX1oxAP77IGuM_H3HR8wQxAhkPYpN68u0MIPUiAzvP7LHI2AZbP0U9y7i019jj-di_13FxWbpd4zMkNhFRlylIhEoaIvMPKlvkR8x543VLHdF4SAbndQTLkEAQ8RY6gCtTT61nnvcSUKJNCKjuYzw=w1280" alt="Umbizo Research">
+            </div>
+        </div>
+
         <h2 class="section-title">Our Core Expertise</h2>
         
         <div class="expertise-grid">
-            <div class="expertise-card">
-                <i class="fas fa-dna expertise-icon"></i>
-                <h3>Genomics</h3>
-                <p>Advanced genomic analysis and sequence interpretation</p>
+            <div class="expertise-card genomics-card">
+                <i class="fas fa-dna expertise-icon genomics-icon"></i>
+                <h3>Genomics & Sequencing</h3>
+                <p>Advanced genomic analysis, variant calling, sequence interpretation, and NGS data processing</p>
             </div>
             
-            <div class="expertise-card">
-                <i class="fas fa-stethoscope expertise-icon"></i>
+            <div class="expertise-card precision-medicine-card">
+                <i class="fas fa-stethoscope expertise-icon precision-medicine-icon"></i>
                 <h3>Precision Medicine</h3>
-                <p>Tailoring medical treatment to individual characteristics</p>
+                <p>Personalized treatment strategies, biomarker discovery, and clinical decision support systems</p>
             </div>
             
-            <div class="expertise-card">
-                <i class="fas fa-laptop-code expertise-icon"></i>
+            <div class="expertise-card bioinformatics-card">
+                <i class="fas fa-laptop-code expertise-icon bioinformatics-icon"></i>
                 <h3>Bioinformatics</h3>
-                <p>Tools and pipelines for biological data analysis</p>
+                <p>Custom pipelines, tool development, and biological data analysis workflows</p>
             </div>
             
-            <div class="expertise-card">
-                <i class="fas fa-robot expertise-icon"></i>
+            <div class="expertise-card ai-card">
+                <i class="fas fa-robot expertise-icon ai-icon"></i>
                 <h3>Machine Learning & AI</h3>
-                <p>Intelligent algorithms for pattern recognition</p>
+                <p>Predictive modeling, deep learning, and intelligent algorithms for biomedical data</p>
             </div>
+            
+            <div class="expertise-card data-engineering-card">
+                <i class="fas fa-database expertise-icon data-engineering-icon"></i>
+                <h3>Data Engineering</h3>
+                <p>Data pipeline architecture, ETL processes, and scalable data infrastructure</p>
+            </div>
+            
+            <div class="expertise-card cloud-card">
+                <i class="fas fa-cloud expertise-icon cloud-icon"></i>
+                <h3>Cloud Computing</h3>
+                <p>Cloud-native solutions, distributed computing, and scalable deployment architectures</p>
+            </div>
+            
+            <div class="expertise-card visualization-card">
+                <i class="fas fa-chart-bar expertise-icon visualization-icon"></i>
+                <h3>Data Visualization</h3>
+                <p>Interactive dashboards, scientific visualization, and exploratory data analysis tools</p>
+            </div>
+            
+            <div class="expertise-card statistics-card">
+                <i class="fas fa-chart-line expertise-icon statistics-icon"></i>
+                <h3>Statistical Analysis</h3>
+                <p>Advanced statistical modeling, hypothesis testing, and experimental design</p>
+            </div>
+        </div>
+
+        <div class="client-access">
+            <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--client-access); margin-bottom: 1rem;"></i>
+            <h3>Existing Client Access</h3>
+            <p>Already have access to our repositories? Visit our GitHub organization page below.</p>
+            <a href="https://github.com/umbizo" class="btn btn-client" style="margin-top: 1rem;">
+                <i class="fab fa-github"></i>
+                Visit GitHub Organization
+            </a>
         </div>
 
         <div class="access-notice">
@@ -191,6 +514,16 @@
                 <i class="fas fa-envelope"></i>
                 Contact for Access
             </a>
+        </div>
+
+        <!-- Members Section -->
+        <div class="members-section">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">Members</h3>
+            <div id="members-container" class="members-container">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i> Loading members...
+                </div>
+            </div>
         </div>
     </div>
 
@@ -204,5 +537,61 @@
         </div>
         <p>&copy; 2024 Umbizo. All rights reserved.</p>
     </footer>
+
+    <script>
+        // GitHub Organization Members Fetch
+        async function fetchGitHubMembers() {
+            const container = document.getElementById('members-container');
+            const orgName = 'umbizo'; // Change this to your organization name if different
+            
+            try {
+                // Using GitHub REST API to get organization members
+                const response = await fetch(`https://api.github.com/orgs/${orgName}/members`);
+                
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+                
+                const members = await response.json();
+                
+                if (members.length === 0) {
+                    container.innerHTML = '<div class="error">No members found.</div>';
+                    return;
+                }
+                
+                // Clear loading message
+                container.innerHTML = '';
+                
+                // Create member elements
+                members.forEach(member => {
+                    const memberElement = document.createElement('a');
+                    memberElement.href = member.html_url;
+                    memberElement.target = '_blank';
+                    memberElement.rel = 'noopener noreferrer';
+                    memberElement.className = 'member-link';
+                    
+                    memberElement.innerHTML = `
+                        <div class="member-avatar">
+                            <img src="${member.avatar_url}" alt="${member.login}" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\"fas fa-user\"></i>';">
+                        </div>
+                    `;
+                    
+                    container.appendChild(memberElement);
+                });
+                
+            } catch (error) {
+                console.error('Error fetching GitHub members:', error);
+                container.innerHTML = `
+                    <div class="error">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Unable to load members.
+                    </div>
+                `;
+            }
+        }
+
+        // Fetch members when page loads
+        document.addEventListener('DOMContentLoaded', fetchGitHubMembers);
+    </script>
 </body>
 </html>
